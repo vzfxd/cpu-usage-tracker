@@ -1,0 +1,20 @@
+# ninja log v5
+53	91	1686251244898191919	cpu_usage_tracker	77e279770f806f12
+0	39	1686252337928851083	build.ninja	f2c6d1f809a04171
+0	30	1686252019676542577	CMakeFiles/cpu_usage_tracker_tests.dir/tests/main_test.c.o	b437c0b2472fb8e2
+0	44	1686243906292195748	CMakeFiles/cpu_usage_tracker.dir/main.c.o	3d15bd31990ac6bc
+1	57	1686252019704542956	CMakeFiles/cpu_usage_tracker_tests.dir/tests/queue_test.c.o	ee59910f4f9bb55
+0	53	1686251244858191387	CMakeFiles/cpu_usage_tracker.dir/queue.c.o	5f86d560f8273b0a
+1	31	1686252356381100890	CMakeFiles/tests.dir/tests/main_test.c.o	59ef4ae442a3be59
+1	50	1686252356401101161	CMakeFiles/tests.dir/tests/queue_test.c.o	cef10d5161eebce1
+0	57	1686252356409101269	CMakeFiles/queue.dir/queue.c.o	8db3bb10ed27d9a1
+57	272	1686252356621104139	libqueue.a	e8406ac2f56665c9
+273	311	1686252356661104681	tests	e4a643bba3c73788
+1	55	1686252403397737402	CMakeFiles/tests.dir/tests/queue_test.c.o	cef10d5161eebce1
+55	95	1686252403433737890	tests	e4a643bba3c73788
+0	54	1686252414097882261	CMakeFiles/tests.dir/tests/queue_test.c.o	cef10d5161eebce1
+54	95	1686252414137882802	tests	e4a643bba3c73788
+1	54	1686252436582186654	CMakeFiles/tests.dir/tests/queue_test.c.o	cef10d5161eebce1
+54	99	1686252436626187250	tests	e4a643bba3c73788
+0	48	1686252450022368607	CMakeFiles/tests.dir/tests/queue_test.c.o	cef10d5161eebce1
+48	91	1686252450062369149	tests	e4a643bba3c73788

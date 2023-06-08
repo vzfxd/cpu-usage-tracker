@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.24)
+project(cpu_usage_tracker C)
+
+set(CMAKE_C_STANDARD 99)
+
+add_library(queue queue.h queue.c)
+
+add_executable(cut main.c)
+add_executable(tests tests/main_test.c tests/queue_test.c tests/queue_test.h)
+
+target_link_libraries(cut PRIVATE queue)
+
+target_link_libraries(tests PRIVATE queue)

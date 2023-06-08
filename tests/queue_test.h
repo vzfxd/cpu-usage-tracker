@@ -1,0 +1,6 @@
+#ifndef CPU_USAGE_TRACKER_QUEUE_TEST_H
+#define CPU_USAGE_TRACKER_QUEUE_TEST_H
+
+void test_queue_main(void);
+
+#endif //CPU_USAGE_TRACKER_QUEUE_TEST_H
