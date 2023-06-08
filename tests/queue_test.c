@@ -94,6 +94,22 @@ static void test_queue_enqueue(void)
         assert(err == queue_full);
         queue_delete(q);
     }
+
+    {
+        Queue* q = queue_new(capacity,elem_size);
+        queue_error err;
+        err = queue_enqueue(q,NULL);
+        assert(err == queue_null_enqueue);
+        queue_delete(q);
+    }
+
+    {
+        Queue* q = queue_new(capacity,elem_size);
+        queue_error err;
+        err = queue_enqueue(NULL,&(int){5});
+        assert(err == queue_null);
+        queue_delete(q);
+    }
 }
 
 static void test_queue_dequeue(void)
@@ -116,6 +132,22 @@ static void test_queue_dequeue(void)
 
         assert(err == queue_empty);
         assert(elem == elems_to_insert[capacity-1]);
+        queue_delete(q);
+    }
+
+    {
+        Queue* q = queue_new(capacity,elem_size);
+        queue_error err;
+        err = queue_dequeue(q,NULL);
+        assert(err == queue_null_dequeue);
+        queue_delete(q);
+    }
+
+    {
+        Queue* q = queue_new(capacity,elem_size);
+        queue_error err;
+        err = queue_dequeue(NULL,&(int){5});
+        assert(err == queue_null);
         queue_delete(q);
     }
 }

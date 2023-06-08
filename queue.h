@@ -8,6 +8,8 @@ typedef enum{
     queue_null = 0,
     queue_full,
     queue_empty,
+    queue_null_enqueue,
+    queue_null_dequeue,
     queue_success
 
 }queue_error;

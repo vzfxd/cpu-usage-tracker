@@ -44,6 +44,8 @@ queue_error queue_delete(Queue* q)
     if(q==NULL)
         return queue_null;
 
+    free(q);
+
     return queue_success;
 }
 
@@ -68,6 +70,9 @@ queue_error queue_enqueue(Queue* const restrict q,void* restrict elem)
     if(q == NULL)
         return queue_null;
 
+    if(elem == NULL)
+        return queue_null_enqueue;
+
     if(queue_is_full(q) == true)
         return queue_full;
 
@@ -84,6 +89,9 @@ queue_error queue_dequeue(Queue* const restrict q, void* restrict elem)
 {
     if(q == NULL)
         return queue_null;
+
+    if(elem == NULL)
+        return queue_null_dequeue;
 
     if(queue_is_empty(q) == true)
         return queue_empty;
