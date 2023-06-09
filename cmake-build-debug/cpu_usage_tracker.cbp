@@ -239,6 +239,9 @@
 		<Unit filename="/home/mateusz/.github/cpu-usage-tracker/main.c">
 			<Option target="cut"/>
 		</Unit>
+		<Unit filename="/home/mateusz/.github/cpu-usage-tracker/printer.h">
+			<Option target="cut"/>
+		</Unit>
 		<Unit filename="/home/mateusz/.github/cpu-usage-tracker/queue.c">
 			<Option target="queue"/>
 		</Unit>

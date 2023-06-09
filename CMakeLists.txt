@@ -7,7 +7,7 @@ add_library(queue queue.h queue.c)
 add_library(reader reader.h reader.c)
 add_library(analyzer analyzer.h analyzer.c)
 
-add_executable(cut main.c reader.c reader.h analyzer.c analyzer.h)
+add_executable(cut main.c reader.c reader.h analyzer.c analyzer.h printer.h)
 add_executable(tests tests/main_test.c tests/queue_test.c tests/reader_test.c tests/analyzer_test.c)
 
 target_link_libraries(cut PRIVATE queue)
