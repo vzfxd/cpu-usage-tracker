@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/cut.dir/main.c.o CMakeFiles/cut.dir/reader.c.o -o cut  libqueue.a libreader.a 
+/usr/bin/cc -g CMakeFiles/cut.dir/main.c.o CMakeFiles/cut.dir/reader.c.o CMakeFiles/cut.dir/analyzer.c.o -o cut  libqueue.a libreader.a libanalyzer.a 

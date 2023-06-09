@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug
 # The main recursive "all" target.
 all: CMakeFiles/queue.dir/all
 all: CMakeFiles/reader.dir/all
+all: CMakeFiles/analyzer.dir/all
 all: CMakeFiles/cut.dir/all
 all: CMakeFiles/tests.dir/all
 .PHONY : all
@@ -76,6 +77,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/queue.dir/clean
 clean: CMakeFiles/reader.dir/clean
+clean: CMakeFiles/analyzer.dir/clean
 clean: CMakeFiles/cut.dir/clean
 clean: CMakeFiles/tests.dir/clean
 .PHONY : clean
@@ -87,7 +89,7 @@ clean: CMakeFiles/tests.dir/clean
 CMakeFiles/queue.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/queue.dir/build.make CMakeFiles/queue.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/queue.dir/build.make CMakeFiles/queue.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target queue"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target queue"
 .PHONY : CMakeFiles/queue.dir/all
 
 # Build rule for subdir invocation for target.
@@ -113,7 +115,7 @@ CMakeFiles/queue.dir/clean:
 CMakeFiles/reader.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target reader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target reader"
 .PHONY : CMakeFiles/reader.dir/all
 
 # Build rule for subdir invocation for target.
@@ -133,19 +135,46 @@ CMakeFiles/reader.dir/clean:
 .PHONY : CMakeFiles/reader.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/analyzer.dir
+
+# All Build rule for target.
+CMakeFiles/analyzer.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analyzer.dir/build.make CMakeFiles/analyzer.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analyzer.dir/build.make CMakeFiles/analyzer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target analyzer"
+.PHONY : CMakeFiles/analyzer.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/analyzer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/analyzer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/analyzer.dir/rule
+
+# Convenience name for target.
+analyzer: CMakeFiles/analyzer.dir/rule
+.PHONY : analyzer
+
+# clean rule for target.
+CMakeFiles/analyzer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analyzer.dir/build.make CMakeFiles/analyzer.dir/clean
+.PHONY : CMakeFiles/analyzer.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/cut.dir
 
 # All Build rule for target.
 CMakeFiles/cut.dir/all: CMakeFiles/queue.dir/all
 CMakeFiles/cut.dir/all: CMakeFiles/reader.dir/all
+CMakeFiles/cut.dir/all: CMakeFiles/analyzer.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cut.dir/build.make CMakeFiles/cut.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cut.dir/build.make CMakeFiles/cut.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target cut"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6 "Built target cut"
 .PHONY : CMakeFiles/cut.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cut.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cut.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/cut.dir/rule
@@ -165,14 +194,15 @@ CMakeFiles/cut.dir/clean:
 # All Build rule for target.
 CMakeFiles/tests.dir/all: CMakeFiles/queue.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/reader.dir/all
+CMakeFiles/tests.dir/all: CMakeFiles/analyzer.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=8,9,10,11 "Built target tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15 "Built target tests"
 .PHONY : CMakeFiles/tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/tests.dir/rule

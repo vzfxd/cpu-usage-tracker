@@ -1,0 +1,2 @@
+/usr/bin/ar qc libanalyzer.a CMakeFiles/analyzer.dir/analyzer.c.o
+/usr/bin/ranlib libanalyzer.a

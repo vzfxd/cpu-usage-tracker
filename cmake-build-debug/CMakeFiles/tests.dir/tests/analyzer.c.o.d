@@ -1,6 +1,7 @@
-CMakeFiles/tests.dir/tests/reader_test.c.o: \
- /home/mateusz/.github/cpu-usage-tracker/tests/reader_test.c \
+CMakeFiles/tests.dir/tests/analyzer.c.o: \
+ /home/mateusz/.github/cpu-usage-tracker/tests/analyzer.c \
  /usr/include/stdc-predef.h \
+ /home/mateusz/.github/cpu-usage-tracker/tests/../analyzer.h \
  /home/mateusz/.github/cpu-usage-tracker/tests/../reader.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \

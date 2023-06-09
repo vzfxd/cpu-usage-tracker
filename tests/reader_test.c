@@ -1,4 +1,3 @@
-#include "reader_test.h"
 #include "../reader.h"
 
 #include <assert.h>
@@ -23,6 +22,8 @@ static void test_reader_read_stats(void)
         assert(stats_arr != NULL);
         assert(e == reader_stats_null);
         assert(d == reader_stats_null);
+
+        reader_stats_arr_delete(stats_arr);
     }
 
 }

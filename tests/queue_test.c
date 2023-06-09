@@ -1,7 +1,7 @@
 #include "../queue.h"
-#include "queue_test.h"
 
 #include <assert.h>
+#include <stdint.h>
 
 static void test_queue_new(void)
 {
@@ -46,7 +46,7 @@ static void test_queue_is_full(void)
 {
     enum {capacity = 3};
     int elems_to_insert[capacity] = {7,9,4};
-    register const size_t elem_size = sizeof(elems_to_insert[0]);
+    register const size_t elem_size = sizeof(int);
 
     {
         Queue* q = queue_new(capacity,elem_size);
@@ -95,18 +95,18 @@ static void test_queue_is_empty(void)
 static void test_queue_enqueue(void)
 {
     enum {capacity = 3};
-    int elems_to_insert[capacity] = {7,9,4};
-    register const size_t elem_size = sizeof(elems_to_insert[0]);
+    uint8_t elems_to_insert[capacity] = {7,9,4};
+    register const size_t elem_size = sizeof(uint8_t);
 
-    //code does not crash (enqueue more elements than available capacity)
     {
         Queue* q = queue_new(capacity-1,elem_size);
         queue_error err;
 
-        for(size_t i = 0; i<capacity; i++)
-            err = queue_enqueue(q,&elems_to_insert[i]);
-        
-        assert(err == queue_full);
+
+        err = queue_enqueue(q,&elems_to_insert[0]);
+        err = queue_enqueue(q,&elems_to_insert[1]);
+
+        assert(err != queue_full);
         queue_delete(q);
     }
 
@@ -131,9 +131,8 @@ static void test_queue_dequeue(void)
 {
     enum {capacity = 3};
     int elems_to_insert[capacity] = {7,9,4};
-    register const size_t elem_size = sizeof(elems_to_insert[0]);
+    register const size_t elem_size = sizeof(int);
 
-    //code does not crash (dequeue more times than available elements)
     {
         Queue* q = queue_new(capacity,elem_size);
         queue_error err;

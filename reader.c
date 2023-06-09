@@ -46,11 +46,17 @@ reader_error reader_read_stats(cpu_stats_arr* stats)
     if(in_stream == NULL)
         return reader_open_fail;
 
-    if(stats == NULL)
+    if(stats == NULL){
+        fclose(in_stream);
         return reader_stats_null;
+    }
 
-    if(stats->cpu_cores == 0)
+
+    if(stats->cpu_cores <= 0){
+        fclose(in_stream);
         return reader_zero_cores;
+    }
+
 
     reader_stats_arr_clean(stats);
 
@@ -121,6 +127,7 @@ reader_error reader_stats_arr_clean(cpu_stats_arr* stats)
 
     for(uint8_t i = 0; i < stats->cpu_cores; i++){
         reader_stats_delete(stats->arr[i]);
+        stats->arr[i] = NULL;
     }
 
     return reader_stats_destroyed;

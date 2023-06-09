@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/tests.dir/tests/main_test.c.o CMakeFiles/tests.dir/tests/queue_test.c.o CMakeFiles/tests.dir/tests/reader_test.c.o -o tests  libqueue.a libreader.a 
+/usr/bin/cc -g CMakeFiles/tests.dir/tests/main_test.c.o CMakeFiles/tests.dir/tests/queue_test.c.o CMakeFiles/tests.dir/tests/reader_test.c.o CMakeFiles/tests.dir/tests/analyzer_test.c.o -o tests  libqueue.a libreader.a libanalyzer.a 

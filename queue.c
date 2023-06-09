@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 struct Queue{
     size_t head;
@@ -13,7 +14,7 @@ struct Queue{
     size_t elem_size;
     size_t elem_num;
 
-    uint64_t buff[];
+    uint8_t buff[];
 };
 
 Queue* queue_new(register const size_t capacity, register const size_t elem_size)
@@ -76,7 +77,7 @@ queue_error queue_enqueue(Queue* const restrict q,void* restrict elem)
     if(queue_is_full(q) == true)
         return queue_full;
 
-    uint64_t* const ptr = &q->buff[ q->head * q->elem_size ];
+    uint8_t* const ptr = &q->buff[ q->head * q->elem_size ];
     memcpy(ptr,elem,q->elem_size);
     q->elem_num++;
 
@@ -96,7 +97,7 @@ queue_error queue_dequeue(Queue* const restrict q, void* restrict elem)
     if(queue_is_empty(q) == true)
         return queue_empty;
 
-    uint64_t* const ptr = &q->buff[ q->tail * q->elem_size ];
+    uint8_t* const ptr = &q->buff[ q->tail * q->elem_size ];
     memcpy(elem,ptr,q->elem_size);
     q->elem_num--;
 

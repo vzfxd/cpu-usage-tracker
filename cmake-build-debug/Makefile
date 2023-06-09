@@ -143,6 +143,19 @@ reader/fast:
 .PHONY : reader/fast
 
 #=============================================================================
+# Target rules for targets named analyzer
+
+# Build rule for target.
+analyzer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 analyzer
+.PHONY : analyzer
+
+# fast build rule for target.
+analyzer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analyzer.dir/build.make CMakeFiles/analyzer.dir/build
+.PHONY : analyzer/fast
+
+#=============================================================================
 # Target rules for targets named cut
 
 # Build rule for target.
@@ -167,6 +180,33 @@ tests: cmake_check_build_system
 tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
+
+analyzer.o: analyzer.c.o
+.PHONY : analyzer.o
+
+# target to build an object file
+analyzer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analyzer.dir/build.make CMakeFiles/analyzer.dir/analyzer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cut.dir/build.make CMakeFiles/cut.dir/analyzer.c.o
+.PHONY : analyzer.c.o
+
+analyzer.i: analyzer.c.i
+.PHONY : analyzer.i
+
+# target to preprocess a source file
+analyzer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analyzer.dir/build.make CMakeFiles/analyzer.dir/analyzer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cut.dir/build.make CMakeFiles/cut.dir/analyzer.c.i
+.PHONY : analyzer.c.i
+
+analyzer.s: analyzer.c.s
+.PHONY : analyzer.s
+
+# target to generate assembly for a file
+analyzer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analyzer.dir/build.make CMakeFiles/analyzer.dir/analyzer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cut.dir/build.make CMakeFiles/cut.dir/analyzer.c.s
+.PHONY : analyzer.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -242,6 +282,30 @@ reader.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/reader.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cut.dir/build.make CMakeFiles/cut.dir/reader.c.s
 .PHONY : reader.c.s
+
+tests/analyzer_test.o: tests/analyzer_test.c.o
+.PHONY : tests/analyzer_test.o
+
+# target to build an object file
+tests/analyzer_test.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/analyzer_test.c.o
+.PHONY : tests/analyzer_test.c.o
+
+tests/analyzer_test.i: tests/analyzer_test.c.i
+.PHONY : tests/analyzer_test.i
+
+# target to preprocess a source file
+tests/analyzer_test.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/analyzer_test.c.i
+.PHONY : tests/analyzer_test.c.i
+
+tests/analyzer_test.s: tests/analyzer_test.c.s
+.PHONY : tests/analyzer_test.s
+
+# target to generate assembly for a file
+tests/analyzer_test.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/analyzer_test.c.s
+.PHONY : tests/analyzer_test.c.s
 
 tests/main_test.o: tests/main_test.c.o
 .PHONY : tests/main_test.o
@@ -323,10 +387,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... analyzer"
 	@echo "... cut"
 	@echo "... queue"
 	@echo "... reader"
 	@echo "... tests"
+	@echo "... analyzer.o"
+	@echo "... analyzer.i"
+	@echo "... analyzer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -336,6 +404,9 @@ help:
 	@echo "... reader.o"
 	@echo "... reader.i"
 	@echo "... reader.s"
+	@echo "... tests/analyzer_test.o"
+	@echo "... tests/analyzer_test.i"
+	@echo "... tests/analyzer_test.s"
 	@echo "... tests/main_test.o"
 	@echo "... tests/main_test.i"
 	@echo "... tests/main_test.s"

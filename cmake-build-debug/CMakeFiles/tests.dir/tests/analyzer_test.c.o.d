@@ -1,6 +1,7 @@
-CMakeFiles/tests.dir/tests/reader_test.c.o: \
- /home/mateusz/.github/cpu-usage-tracker/tests/reader_test.c \
+CMakeFiles/tests.dir/tests/analyzer_test.c.o: \
+ /home/mateusz/.github/cpu-usage-tracker/tests/analyzer_test.c \
  /usr/include/stdc-predef.h \
+ /home/mateusz/.github/cpu-usage-tracker/tests/../analyzer.h \
  /home/mateusz/.github/cpu-usage-tracker/tests/../reader.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
@@ -17,4 +18,10 @@ CMakeFiles/tests.dir/tests/reader_test.c.o: \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/assert.h
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/assert.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h

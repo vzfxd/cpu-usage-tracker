@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tests.dir/tests/analyzer_test.c.o"
+  "CMakeFiles/tests.dir/tests/analyzer_test.c.o.d"
   "CMakeFiles/tests.dir/tests/main_test.c.o"
   "CMakeFiles/tests.dir/tests/main_test.c.o.d"
   "CMakeFiles/tests.dir/tests/queue_test.c.o"

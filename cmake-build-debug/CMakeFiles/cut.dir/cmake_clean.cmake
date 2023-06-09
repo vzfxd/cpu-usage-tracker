@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cut.dir/analyzer.c.o"
+  "CMakeFiles/cut.dir/analyzer.c.o.d"
   "CMakeFiles/cut.dir/main.c.o"
   "CMakeFiles/cut.dir/main.c.o.d"
   "CMakeFiles/cut.dir/reader.c.o"
