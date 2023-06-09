@@ -5,18 +5,21 @@
 
 static void test_queue_new(void)
 {
+    register const size_t capacity = 3;
+    register const size_t elem_size = 2;
+
     {
-        Queue* q = queue_new(0,5);
+        Queue* q = queue_new(0,elem_size);
         assert(q == NULL);
     }
 
     {
-        Queue* q = queue_new(7,0);
+        Queue* q = queue_new(capacity,0);
         assert(q == NULL);
     }
 
     {
-        Queue* q = queue_new(10,2);
+        Queue* q = queue_new(capacity,elem_size);
         assert(q != NULL);
         queue_delete(q);
     }

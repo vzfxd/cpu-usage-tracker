@@ -5,13 +5,12 @@
 #include <stdbool.h>
 
 typedef enum{
-    queue_null = 0,
+    queue_success = 0,
+    queue_null,
     queue_full,
     queue_empty,
-    queue_null_enqueue,
-    queue_null_dequeue,
-    queue_success
-
+    queue_null_enqueue, //provided null pointer as element to enqueue
+    queue_null_dequeue //provided null pointer as element to dequeue
 }queue_error;
 
 typedef struct Queue Queue;
