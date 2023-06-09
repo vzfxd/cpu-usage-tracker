@@ -27,8 +27,19 @@ static void test_queue_new(void)
 
 static void test_queue_delete(void)
 {
-    //code does not crash
-    queue_delete(NULL);
+    register const size_t capacity = 3;
+    register const size_t elem_size = 2;
+
+    {
+        register const queue_error err = queue_delete(NULL);
+        assert(err == queue_null);
+    }
+
+    {
+        Queue* q = queue_new(capacity,elem_size);
+        register const queue_error err = queue_delete(q);
+        assert(err == queue_destroyed);
+    }
 }
 
 static void test_queue_is_full(void)
@@ -94,6 +105,7 @@ static void test_queue_enqueue(void)
 
         for(size_t i = 0; i<capacity; i++)
             err = queue_enqueue(q,&elems_to_insert[i]);
+        
         assert(err == queue_full);
         queue_delete(q);
     }

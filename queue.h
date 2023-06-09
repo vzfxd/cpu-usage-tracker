@@ -6,6 +6,7 @@
 
 typedef enum{
     queue_success = 0,
+    queue_destroyed,
     queue_null,
     queue_full,
     queue_empty,

@@ -46,7 +46,7 @@ queue_error queue_delete(Queue* q)
 
     free(q);
 
-    return queue_success;
+    return queue_destroyed;
 }
 
 bool queue_is_full(const Queue* q)

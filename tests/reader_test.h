@@ -1,0 +1,6 @@
+#ifndef CPU_USAGE_TRACKER_READER_TEST_H
+#define CPU_USAGE_TRACKER_READER_TEST_H
+
+void test_reader_main(void);
+
+#endif //CPU_USAGE_TRACKER_READER_TEST_H

@@ -1,5 +1,6 @@
-/home/mateusz/github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/queue.dir
-/home/mateusz/github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/cut.dir
-/home/mateusz/github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/tests.dir
-/home/mateusz/github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/mateusz/github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/queue.dir
+/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/reader.dir
+/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/cut.dir
+/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/tests.dir
+/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mateusz/.github/cpu-usage-tracker/cmake-build-debug/CMakeFiles/rebuild_cache.dir
