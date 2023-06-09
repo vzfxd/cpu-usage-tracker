@@ -11,11 +11,12 @@ typedef struct cpu_usage{
 
 } cpu_usage;
 
-void analyzer_delete(void);
+void analyzer_delete(analyzer* an);
+analyzer* analyzer_new();
 
-cpu_usage* analyzer_analyze(void);
-void analyzer_update(cpu_stats_arr* stats);
+cpu_usage* analyzer_analyze(analyzer* an);
 
+void analyzer_update(cpu_stats_arr* stats, analyzer* an);
 void analyzer_usage_delete(cpu_usage* usage);
 
 

@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 
-static analyzer* an = NULL;
 
 struct analyzer
 {
@@ -12,7 +11,7 @@ struct analyzer
     cpu_stats_arr* curr;
 };
 
-cpu_usage* analyzer_analyze(void)
+cpu_usage* analyzer_analyze(analyzer* an)
 {
    if(an == NULL)
        return NULL;
@@ -57,12 +56,11 @@ cpu_usage* analyzer_analyze(void)
    return usage;
 }
 
-void analyzer_update(cpu_stats_arr* const stats)
+void analyzer_update(cpu_stats_arr* const stats, analyzer* an)
 {
     if(stats == NULL) return;
 
-    if(an == NULL)
-        an = calloc(1,sizeof(*an));
+    if(an == NULL) return;
 
     if(an->curr == NULL)
         an->curr = stats;
@@ -75,7 +73,7 @@ void analyzer_update(cpu_stats_arr* const stats)
 
 }
 
-void analyzer_delete(void)
+void analyzer_delete(analyzer* an)
 {
     if(an == NULL) return;
 
@@ -91,4 +89,10 @@ void analyzer_usage_delete(cpu_usage* usage)
         return;
 
     free(usage);
+}
+
+analyzer* analyzer_new()
+{
+    analyzer* an = calloc(1,sizeof(*an));
+    return an;
 }
