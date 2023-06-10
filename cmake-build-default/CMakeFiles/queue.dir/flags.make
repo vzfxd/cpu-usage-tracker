@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = 
 
-C_FLAGS = -std=gnu99
+C_FLAGS = -Wno-declaration-after-statement -Wno-padded -Wno-vla -std=gnu99
 

@@ -42,11 +42,10 @@ cpu_usage* analyzer_analyze(analyzer* an)
 
         uint64_t prev_total = prev_idle + prev_non_idle;
         uint64_t total = curr_idle + curr_non_idle;
-
         uint64_t total_d = total - prev_total;
         uint64_t idle_d = curr_idle - prev_idle;
 
-        usage->usage[i] = ( (double) (total_d - idle_d)/total_d ) * 100;
+        usage->usage[i] = ((double) (total_d - idle_d)/(double)total_d ) * 100;
    }
 
     reader_stats_arr_delete(an->prev);
@@ -91,7 +90,7 @@ void analyzer_usage_delete(cpu_usage* usage)
     free(usage);
 }
 
-analyzer* analyzer_new()
+analyzer* analyzer_new(void)
 {
     analyzer* an = calloc(1,sizeof(*an));
     return an;

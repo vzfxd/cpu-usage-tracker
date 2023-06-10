@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 10,
 				"parent" : 0
 			}
 		]
@@ -35,6 +35,9 @@
 		{
 			"compileCommandFragments" : 
 			[
+				{
+					"fragment" : "-Wno-declaration-after-statement -Wno-padded -Wno-vla"
+				},
 				{
 					"fragment" : "-std=gnu99"
 				}

@@ -7,9 +7,11 @@
 #include <time.h>
 #include <signal.h>
 
-volatile sig_atomic_t done = 0;
+void delay(int milliseconds);
 
-void sig_handler(int signum)
+volatile static sig_atomic_t done = 0;
+
+static void sig_handler(int signum)
 {
     if(signum == SIGTERM)
         done = 1;

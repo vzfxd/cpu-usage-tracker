@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libqueue.a"
+			"path" : "libreader.a"
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 9,
 				"parent" : 0
 			}
 		]
@@ -35,6 +35,9 @@
 		{
 			"compileCommandFragments" : 
 			[
+				{
+					"fragment" : "-Wno-declaration-after-statement -Wno-padded -Wno-vla"
+				},
 				{
 					"fragment" : "-std=gnu99"
 				}
@@ -54,9 +57,9 @@
 			]
 		}
 	],
-	"id" : "queue::@6890427a1f51a3e7e1df",
-	"name" : "queue",
-	"nameOnDisk" : "libqueue.a",
+	"id" : "reader::@6890427a1f51a3e7e1df",
+	"name" : "reader",
+	"nameOnDisk" : "libreader.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -83,13 +86,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "queue.h",
+			"path" : "reader.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "queue.c",
+			"path" : "reader.c",
 			"sourceGroupIndex" : 1
 		}
 	],

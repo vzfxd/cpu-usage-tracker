@@ -12,7 +12,7 @@ typedef struct cpu_usage{
 } cpu_usage;
 
 void analyzer_delete(analyzer* an);
-analyzer* analyzer_new();
+analyzer* analyzer_new(void);
 
 cpu_usage* analyzer_analyze(analyzer* an);
 

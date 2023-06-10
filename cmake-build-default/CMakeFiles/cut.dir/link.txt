@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/cut.dir/main.c.o -o cut  libqueue.a libreader.a libanalyzer.a 
+/usr/bin/cc -Wno-declaration-after-statement -Wno-padded -Wno-vla CMakeFiles/cut.dir/main.c.o -o cut  libqueue.a libreader.a libanalyzer.a 

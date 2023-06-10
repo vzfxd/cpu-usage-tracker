@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.22)
 project(cpu_usage_tracker C)
 
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_FLAGS "-Wno-declaration-after-statement -Wno-padded -Wno-vla -Wno-implicit-function-declaration")
+
 
 add_library(queue queue.h queue.c)
 add_library(reader reader.h reader.c)

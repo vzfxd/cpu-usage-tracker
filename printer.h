@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+void print_usage(cpu_usage* usage);
+
 void print_usage(cpu_usage* usage)
 {
     if(usage == NULL) return;
