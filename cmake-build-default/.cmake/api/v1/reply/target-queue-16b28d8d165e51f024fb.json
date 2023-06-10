@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libanalyzer.a"
+			"path" : "libqueue.a"
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -36,7 +36,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-Wno-declaration-after-statement -Wno-padded -Wno-vla"
+					"fragment" : "-Wno-declaration-after-statement -Wno-padded -Wno-vla -Wno-implicit-function-declaration"
 				},
 				{
 					"fragment" : "-std=gnu99"
@@ -57,9 +57,9 @@
 			]
 		}
 	],
-	"id" : "analyzer::@6890427a1f51a3e7e1df",
-	"name" : "analyzer",
-	"nameOnDisk" : "libanalyzer.a",
+	"id" : "queue::@6890427a1f51a3e7e1df",
+	"name" : "queue",
+	"nameOnDisk" : "libqueue.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -86,13 +86,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "analyzer.h",
+			"path" : "queue.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "analyzer.c",
+			"path" : "queue.c",
 			"sourceGroupIndex" : 1
 		}
 	],

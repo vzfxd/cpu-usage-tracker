@@ -25,12 +25,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="765331f4-05fc-4319-bcb9-2d726c45d4da" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyzer.c" beforeDir="false" afterPath="$PROJECT_DIR$/analyzer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyzer.h" beforeDir="false" afterPath="$PROJECT_DIR$/analyzer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printer.h" beforeDir="false" afterPath="$PROJECT_DIR$/printer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader.c" beforeDir="false" afterPath="$PROJECT_DIR$/reader.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/.cmake/api/v1/reply/codemodel-v2-086781ad84cf26baec21.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/.cmake/api/v1/reply/index-2023-06-10T17-50-55-0979.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/.cmake/api/v1/reply/target-analyzer-66f1c7584fdf8ef8af50.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/.cmake/api/v1/reply/target-cut-28175ddc23956d86a106.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/.cmake/api/v1/reply/target-queue-13563304b8be430b9eeb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/.cmake/api/v1/reply/target-reader-891fb92343b352458716.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/.cmake/api/v1/reply/target-tests-ca5c8c5e145e912858c4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/analyzer.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/analyzer.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/cut.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/cut.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/cut.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/cut.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/queue.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/queue.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/reader.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/reader.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/tests.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/tests.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/tests.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-default/CMakeFiles/tests.dir/link.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +128,7 @@
       <workItem from="1686376194654" duration="21519000" />
       <workItem from="1686399317196" duration="1866000" />
       <workItem from="1686415530234" duration="662000" />
-      <workItem from="1686416199451" duration="2526000" />
+      <workItem from="1686416199451" duration="3309000" />
     </task>
     <servers />
   </component>
