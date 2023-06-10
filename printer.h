@@ -9,6 +9,8 @@
 
 void print_usage(cpu_usage* usage)
 {
+    if(usage == NULL) return;
+
     system("clear");
     printf("PID: %d\n",getpid());
     for(uint8_t i = 0; i<usage->cpu_core; i++){
