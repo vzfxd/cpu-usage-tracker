@@ -54,9 +54,6 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-fdiagnostics-color=always"
-				},
-				{
 					"fragment" : "-std=gnu99"
 				}
 			],
@@ -78,16 +75,16 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 4,
-			"id" : "analyzer::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "queue::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 3,
 			"id" : "reader::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "analyzer::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "cut::@6890427a1f51a3e7e1df",

@@ -36,9 +36,6 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-fdiagnostics-color=always"
-				},
-				{
 					"fragment" : "-std=gnu99"
 				}
 			],

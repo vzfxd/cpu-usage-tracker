@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.24"
+						"string" : "3.22"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -47,35 +47,35 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "analyzer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-analyzer-150384372cef25260202.json",
+					"jsonFile" : "target-analyzer-01cb3352a09ae962dbaf.json",
 					"name" : "analyzer",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "cut::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cut-861dc9bf8d7c4df62653.json",
+					"jsonFile" : "target-cut-4fa36a29facd45f04abc.json",
 					"name" : "cut",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "queue::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-queue-8c134165f284535f5cc3.json",
+					"jsonFile" : "target-queue-e941f0755e0e2b161d75.json",
 					"name" : "queue",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "reader::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-reader-72f9bf5ae375e53fb227.json",
+					"jsonFile" : "target-reader-3db57b8ffd5f6b662982.json",
 					"name" : "reader",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "tests::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tests-00f9f9dc36a8eb48d3a6.json",
+					"jsonFile" : "target-tests-35dabd1c38ec3b6d3158.json",
 					"name" : "tests",
 					"projectIndex" : 0
 				}
@@ -91,6 +91,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 3
 	}
 }
