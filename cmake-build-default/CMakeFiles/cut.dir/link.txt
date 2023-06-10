@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/cut.dir/main.c.o -o cut  libqueue.a libreader.a libanalyzer.a 

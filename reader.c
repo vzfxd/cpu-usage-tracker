@@ -154,7 +154,6 @@ reader_error reader_get_core_num(uint8_t* cores)
     }
 
     fclose(file);
-
     *cores = no_cores - 1;
 
     return reader_success;

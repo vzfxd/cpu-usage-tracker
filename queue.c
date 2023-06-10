@@ -91,7 +91,6 @@ queue_error queue_enqueue(Queue* const restrict q,void* restrict elem)
     uint8_t* const ptr = &q->buff[ q->head * q->elem_size ];
     memcpy(ptr,elem,q->elem_size);
     q->elem_num++;
-
     q->head = (q->head + 1) % q->capacity;
 
     return queue_success;
@@ -110,9 +109,7 @@ queue_error queue_dequeue(Queue* const restrict q, void* restrict elem)
 
     uint8_t* const ptr = &q->buff[ q->tail * q->elem_size ];
     memcpy(elem,ptr,q->elem_size);
-
     q->elem_num--;
-
     q->tail = (q->tail + 1) % q->capacity;
 
     return queue_success;
@@ -147,5 +144,3 @@ void queue_unlock(Queue* q)
 {
     pthread_mutex_unlock(&q->mutex);
 }
-
-

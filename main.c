@@ -11,7 +11,8 @@ volatile sig_atomic_t done = 0;
 
 void sig_handler(int signum)
 {
-    done = 1;
+    if(signum == SIGTERM)
+        done = 1;
 }
 
 void delay(int milliseconds) {
