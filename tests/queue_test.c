@@ -2,6 +2,11 @@
 
 #include <assert.h>
 #include <stdint.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include "../reader.h"
+#include "../analyzer.h"
 
 static void test_queue_new(void)
 {
@@ -163,6 +168,42 @@ static void test_queue_dequeue(void)
         err = queue_dequeue(NULL,&(int){5});
         assert(err == queue_null);
         queue_delete(q);
+    }
+
+    {
+        uint8_t cpu_cores;
+        reader_get_core_num(&cpu_cores);
+
+        Queue* q = queue_new(capacity,sizeof(cpu_stats_arr) + sizeof(cpu_stats) * cpu_cores);
+        cpu_stats_arr* stats1 = calloc(1,sizeof(cpu_stats_arr) + sizeof(cpu_stats) * cpu_cores);
+        cpu_stats_arr* stats2 = calloc(1,sizeof(cpu_stats_arr) + sizeof(cpu_stats) * cpu_cores);
+
+        cpu_stats_arr* stats_to_sore1 = reader_stats_arr_new();
+        cpu_stats_arr* stats_to_sore2 = reader_stats_arr_new();
+
+        reader_read_stats(stats_to_sore1);
+        sleep(2);
+        reader_read_stats(stats_to_sore2);
+
+        queue_enqueue(q,stats_to_sore1);
+        queue_enqueue(q,stats_to_sore2);
+
+        free(stats_to_sore1);
+        free(stats_to_sore2);
+
+        queue_dequeue(q,stats1);
+        queue_dequeue(q,stats2);
+
+        analyzer* an = analyzer_new();
+
+        analyzer_update(stats1,an);
+        analyzer_update(stats2,an);
+
+        cpu_usage* usage = analyzer_analyze(an);
+
+        queue_delete(q);
+        analyzer_usage_delete(usage);
+        analyzer_delete(an);
     }
 }
 

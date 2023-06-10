@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
+#include <pthread.h>
 
 struct Queue{
     size_t head;
@@ -13,6 +13,10 @@ struct Queue{
     size_t capacity;
     size_t elem_size;
     size_t elem_num;
+
+    pthread_mutex_t mutex;
+    pthread_cond_t can_consume;
+    pthread_cond_t can_produce;
 
     uint8_t buff[];
 };
@@ -34,7 +38,10 @@ Queue* queue_new(register const size_t capacity, register const size_t elem_size
         .tail = 0,
         .elem_num = 0,
         .capacity = capacity,
-        .elem_size = elem_size
+        .elem_size = elem_size,
+        .mutex = PTHREAD_MUTEX_INITIALIZER,
+        .can_consume = PTHREAD_COND_INITIALIZER,
+        .can_produce = PTHREAD_COND_INITIALIZER
     };
 
     return q;
@@ -44,6 +51,10 @@ queue_error queue_delete(Queue* q)
 {
     if(q==NULL)
         return queue_null;
+
+    pthread_mutex_destroy(&q->mutex);
+    pthread_cond_destroy(&q->can_consume);
+    pthread_cond_destroy(&q->can_produce);
 
     free(q);
 
@@ -99,11 +110,42 @@ queue_error queue_dequeue(Queue* const restrict q, void* restrict elem)
 
     uint8_t* const ptr = &q->buff[ q->tail * q->elem_size ];
     memcpy(elem,ptr,q->elem_size);
+
     q->elem_num--;
 
     q->tail = (q->tail + 1) % q->capacity;
 
     return queue_success;
+}
+
+void queue_call_producer(Queue* q)
+{
+    pthread_cond_signal(&q->can_produce);
+}
+
+void queue_call_consumer(Queue* q)
+{
+    pthread_cond_signal(&q->can_consume);
+}
+
+void queue_wait_for_producer(Queue* q)
+{
+    pthread_cond_wait(&q->can_consume, &q->mutex);
+}
+
+void queue_wait_for_consumer(Queue* q)
+{
+    pthread_cond_wait(&q->can_produce, &q->mutex);
+}
+
+void queue_lock(Queue* q)
+{
+    pthread_mutex_lock(&q->mutex);
+}
+
+void queue_unlock(Queue* q)
+{
+    pthread_mutex_unlock(&q->mutex);
 }
 
 

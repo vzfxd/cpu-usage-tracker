@@ -4,9 +4,11 @@
 #include "analyzer.h"
 #include "stdio.h"
 #include "stddef.h"
+#include <stdlib.h>
 
 void print_usage(cpu_usage* usage)
 {
+    system("clear");
     for(uint8_t i = 0; i<usage->cpu_core; i++){
         printf("cpu%d",i);
         for(uint8_t j = 0; j < usage->usage[i]; j++){

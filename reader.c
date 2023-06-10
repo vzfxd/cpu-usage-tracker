@@ -37,7 +37,7 @@ static reader_error reader_stats_delete(cpu_stats* stats)
     return reader_stats_destroyed;
 }
 
-reader_error reader_read_stats(cpu_stats_arr* stats)
+reader_error reader_read_stats(cpu_stats_arr* const stats)
 {
     const register size_t buff_size = 1024;
     char buffer[buff_size];

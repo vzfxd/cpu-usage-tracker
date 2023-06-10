@@ -25,5 +25,13 @@ bool queue_is_empty(const Queue* q);
 queue_error queue_enqueue(Queue* restrict q, void* restrict elem);
 queue_error queue_dequeue(Queue* restrict q, void* restrict elem);
 
+void queue_call_producer(Queue* q);
+void queue_call_consumer(Queue* q);
+void queue_wait_for_producer(Queue* q);
+void queue_wait_for_consumer(Queue* q);
+
+void queue_lock(Queue* q);
+void queue_unlock(Queue* q);
+
 
 #endif
