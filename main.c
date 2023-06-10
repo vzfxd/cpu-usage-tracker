@@ -36,19 +36,10 @@ static void* reader_f(void* arg)
 
     while(1)
     {
-        if(done)
-        {
-            queue_call_consumer(stats_q);
-            pthread_exit(NULL);
-        }
-
         queue_lock(stats_q);
 
         if(queue_is_full(stats_q))
             queue_wait_for_consumer(stats_q);
-
-        if(done)
-            pthread_exit(NULL);
 
         cpu_stats_arr* stats = reader_stats_arr_new();
         reader_read_stats(stats);
@@ -59,6 +50,7 @@ static void* reader_f(void* arg)
         queue_call_consumer(stats_q);
         queue_unlock(stats_q);
 
+        if(done)pthread_exit(NULL);
         delay(750);
     }
 
@@ -75,25 +67,11 @@ static void* analyzer_f(void* arg)
 
     while(1)
     {
-        if(done)
-        {
-            queue_call_producer(stats_q);
-            queue_call_consumer(usage_q);
-            pthread_exit(NULL);
-        }
-
         // ZBIERANIE DANYCH OD READERA //
         queue_lock(stats_q);
 
         if(queue_is_empty(stats_q))
             queue_wait_for_producer(stats_q);
-
-        if(done)
-        {
-            queue_call_consumer(usage_q);
-            pthread_exit(NULL);
-        }
-
 
         cpu_stats_arr* stats = calloc(1,sizeof(cpu_stats_arr) + sizeof(cpu_stats) * cpu_cores);
         queue_dequeue(stats_q,stats);
@@ -108,9 +86,6 @@ static void* analyzer_f(void* arg)
         if(queue_is_full(usage_q))
             queue_wait_for_consumer(usage_q);
 
-        if(done)
-            pthread_exit(NULL);
-
         analyzer_update(stats,an);
         cpu_usage* usage = analyzer_analyze(an);
         queue_enqueue(usage_q,usage);
@@ -119,6 +94,7 @@ static void* analyzer_f(void* arg)
         queue_call_consumer(usage_q);
         queue_unlock(usage_q);
         //
+        if(done)pthread_exit(NULL);
     }
 
 }
@@ -132,19 +108,10 @@ static void* printer_f(void* arg)
 
     while(1)
     {
-        if(done)
-        {
-            queue_call_producer(usage_q);
-            pthread_exit(NULL);
-        }
-
         queue_lock(usage_q);
 
         if(queue_is_empty(usage_q))
             queue_wait_for_producer(usage_q);
-
-        if(done)
-            pthread_exit(NULL);
 
         cpu_usage* usage = calloc(1,sizeof(cpu_usage) + sizeof(double) * cpu_cores);
         queue_dequeue(usage_q,usage);
@@ -154,6 +121,8 @@ static void* printer_f(void* arg)
 
         queue_call_producer(usage_q);
         queue_unlock(usage_q);
+
+        if(done)pthread_exit(NULL);
     }
 
 }
